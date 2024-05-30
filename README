@@ -3,25 +3,25 @@
 ## To-Do List for OpenAI TTS Chrome Extension
 
 1. **Set Up Your Development Environment**
-   - [-] Install Node.js and npm.
+  - [x] Install Node.js and npm.
 
 2. **Initialize Your Project**
-   - [-] Create a project folder.
-   - [-] Initialize npm with `npm init -y`.
+  - [x] Create a project folder.
+  - [x] Initialize npm with `npm init -y`.
 
 3. **Install Necessary npm Packages**
-   - [-] Install `dotenv` with `npm install dotenv`.
-   - [-] Install `node-fetch` with `npm install node-fetch`.
+  - [x] Install `dotenv` with `npm install dotenv`.
+  - [x] Install `node-fetch` with `npm install node-fetch`.
 
 4. **Create .env File**
-   - [-] Create a `.env` file in the root of your project.
-   - [ ] Add your OpenAI API key to the `.env` file.
+  - [x] Create a `.env` file in the root of your project.
+  - [ ] Add your OpenAI API key to the `.env` file.
 
 5. **Create the Chrome Extension Manifest**
-   - [-] Create `manifest.json` file in the project folder.
+   - [x] Create `manifest.json` file in the project folder.
 
 6. **Create Background Script**
-   - [-] Create `background.js` file in the project folder.
+   - [x] Create `background.js` file in the project folder.
    - [ ] Implement OpenAI TTS API request logic.
 
 7. **Create Content Script**
