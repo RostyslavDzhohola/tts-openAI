@@ -1,3 +1,5 @@
+console.log("popup.js loaded");
+
 document.getElementById('test').addEventListener('click', async () => {
   const response = await chrome.runtime.sendMessage('test');
   console.log('Received response', response);
@@ -20,6 +22,10 @@ document.getElementById('readAloud').addEventListener('click', async () => {
 });
 
 document.getElementById('scrapeTest').addEventListener('click', async () => {
-  const response = await chrome.runtime.sendMessage('scrapeText');
-  console.log('Received response from scrapeText', response);
+  console.log("button clicked crapeTest");
+  alert('Hello from the popup script');
+  // console.log('Sending message from popup.js to scrapeTest in content.js');
+  // const response = await chrome.runtime.sendMessage('scrapeTest');
+  // console.log('The alert message is:', response);
+  // alert('Received response from scrapeTest: ' + response);
 });

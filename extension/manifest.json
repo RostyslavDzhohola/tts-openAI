@@ -4,7 +4,8 @@
   "version": "1.0",
   "description": "Scrapes text and converts it to speech using OpenAI's API.",
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "content_scripts": [
     {
@@ -25,6 +26,6 @@
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png"
   },
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "webRequest"],
   "host_permissions": ["http://*/*", "https://*/*"]
 }
