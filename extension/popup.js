@@ -5,11 +5,11 @@ document.getElementById('test').addEventListener('click', async () => {
 
 document.getElementById('scrapeAndConvert').addEventListener('click', async () => {
   const response = await chrome.runtime.sendMessage('scrapeAndConvert');
-  console.log('Received response', response);
+  console.log('Received response from scrapeAndConvert', response);
 });
 
 document.getElementById('readAloud').addEventListener('click', async () => {
-  const response = await fetch('http://localhost:3000/audio/speech.mp3')
+  const response = await fetch('http://localhost:3000/audio/speech.mp3');
   if (response.ok) {
     const audioUrl = response.url;
     const audio = new Audio(audioUrl);
@@ -17,4 +17,9 @@ document.getElementById('readAloud').addEventListener('click', async () => {
   } else {
     console.error('Failed to fetch audio');
   }
+});
+
+document.getElementById('scrapeTest').addEventListener('click', async () => {
+  const response = await chrome.runtime.sendMessage('scrapeText');
+  console.log('Received response from scrapeText', response);
 });

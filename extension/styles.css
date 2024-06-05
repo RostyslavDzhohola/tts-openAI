@@ -4,6 +4,11 @@ h1 {
 }
 
 button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  align-items: center;
   font-weight: bold;
   background-color: rgb(198, 190, 190);
   color: black;

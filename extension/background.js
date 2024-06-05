@@ -1,9 +1,13 @@
 chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
   console.log('Received message', message);
   if (message === 'scrapeAndConvert') {
-    sendResponse('Hello from the background script. Running scrapeAndConvert');
+    console.log('Received scrapeAndConvert message');
+    //todo: scrape text from active tab
+    //todo: send post request to server http://localhost:3000/convert
+    //todo: send response to active tab
+    return true; // Keep the message channel open for sendResponse
   } else if (message === 'test') {
-    // TODO: Send post request to server http://localhost:3000/convert
+
     const response = await fetch('http://localhost:3000/convert', {
       method: 'POST',
       headers: {
