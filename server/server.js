@@ -52,6 +52,8 @@ app.post("/convert", async (req, res) => {
     const buffer = Buffer.from(await mp3.arrayBuffer());
     await fs.promises.writeFile(speechFile, buffer);
 
+    // Ensure the file is written before sending the response
+    await fs.promises.access(speechFile, fs.constants.F_OK);
     res.send("http://localhost:3000/audio/speech.mp3");
   } catch (error) {
     console.error("Error converting text:", error);

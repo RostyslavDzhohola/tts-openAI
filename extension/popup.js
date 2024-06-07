@@ -5,10 +5,11 @@ console.log("popup.js loaded");
 //   console.log('Received response', response);
 // });
 
-document.getElementById('scrapeAndConvert').addEventListener('click', async () => {
-  const response = await chrome.runtime.sendMessage('scrapeAndConvert');
-  console.log('Received response from scrapeAndConvert', response);
-});
+// document.getElementById('scrapeAndConvert').addEventListener('click', async () => {
+//   const response = await chrome.runtime.sendMessage('scrapeAndConvert');
+//   console.log('Received response from scrapeAndConvert', response);
+//   // todo: this does not work, the backgorund doens't have the coresponding action
+// });
 
 document.getElementById('readAloud').addEventListener('click', async () => {
   const response = await fetch('http://localhost:3000/audio/speech.mp3', { cache: 'no-store' });
