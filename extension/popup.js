@@ -22,10 +22,12 @@ document.getElementById('readAloud').addEventListener('click', async () => {
 });
 
 document.getElementById('scrapeTest').addEventListener('click', async () => {
-  console.log("button clicked crapeTest");
-  alert('Hello from the popup script');
-  // console.log('Sending message from popup.js to scrapeTest in content.js');
-  // const response = await chrome.runtime.sendMessage('scrapeTest');
-  // console.log('The alert message is:', response);
-  // alert('Received response from scrapeTest: ' + response);
+  console.log("button clicked scrapeTest");
+  try {
+    const response = await chrome.runtime.sendMessage({ action: 'scrapeTest' });
+    console.log('Received response from background:', response);
+    alert('Received response from scrapeTest: ' + response);
+  } catch (error) {
+    console.error('Error sending message:', error);
+  }
 });
