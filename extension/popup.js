@@ -1,7 +1,7 @@
 console.log("popup.js loaded");
 
-document.getElementById('test').addEventListener('click', async () => {
-  const response = await chrome.runtime.sendMessage('test');
+document.getElementById('testFetchServer').addEventListener('click', async () => {
+  const response = await chrome.runtime.sendMessage('testFetchServer');
   console.log('Received response', response);
 });
 
@@ -27,6 +27,16 @@ document.getElementById('scrapeTest').addEventListener('click', async () => {
     const response = await chrome.runtime.sendMessage({ action: 'scrapeTest' });
     console.log('Received response from background:', response);
     alert('Received response from scrapeTest: ' + response);
+  } catch (error) {
+    console.error('Error sending message:', error);
+  }
+});
+
+document.getElementById('scrapeTextTest').addEventListener('click', async () => {
+  console.log("button clicked scrapeTextTest");
+  try {
+    const response = await chrome.runtime.sendMessage({ action: 'scrapeTextTest' });
+    console.log('Received response from background:', response);
   } catch (error) {
     console.error('Error sending message:', error);
   }
